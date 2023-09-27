@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
-"""define class square"""
+"""define class square."""
 
 class Square:
 
-    """represent class square"""
+    """represent class square."""
 
     def __init__(self, size=0):
 
@@ -31,9 +31,9 @@ class Square:
     def area(self):
         """Return current Square area."""
         return (self.__size ** 2)
-    
+
     def my_print(self):
-        """print in stdout the square with the character #"""
+        """print in stdout the square with the # character."""
         for x in range(0, self.__size):
             [print("#", end="") for z in range(self.__size)]
             print("")
