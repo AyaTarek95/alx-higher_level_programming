@@ -14,7 +14,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def width(Self):
+    def width(self):
         '''Set/get Rectangle's width.'''
         return self.__width
 
@@ -50,6 +50,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be => 0")
+        self.__x = value
 
     @property
     def y(self):
@@ -62,3 +63,8 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be => 0")
+        self.__y = value
+
+    def area(self):
+        '''Calculates rectangle's area.'''
+        return self.width * self.height
