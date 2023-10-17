@@ -2,6 +2,7 @@
 """Module of class Rectangle."""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """Derived from BaseGeometry class."""
     def __init__(self, width, height):
@@ -16,5 +17,5 @@ class Rectangle(BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """str representation method."""
+        """Str representation method."""
         return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
