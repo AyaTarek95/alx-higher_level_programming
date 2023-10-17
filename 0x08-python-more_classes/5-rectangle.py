@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Defines a rectangle class."""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
     """Represent a Rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Initiate a new rectangle.
+        """Initiate a new Rectangle.
 
         Args:
             width (int): the width of rectangle.
@@ -30,7 +30,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set height of rectangle."""
+        """Get/set height of Rectangle."""
         return self.__height
 
     @height.setter
@@ -42,19 +42,19 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return area of rectangle."""
+        """Return area of Rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return perimeter of rectangle."""
+        """Return perimeter of Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return ((self.__width * 2) + (self.__height * 2))
 
     def __Str__(self):
-        """Return printable representation of the rectangle.
+        """Return printable representation of the Rectangle.
 
-        Print the rectangle with the character '#'.
+        Print the Rectangle with the character '#'.
         """
         newrect = []
         if self.__width != 0 and self.__height != 0:
@@ -63,9 +63,9 @@ class Rectangle:
         return newrect
 
     def __repr__(self):
-        """Return string represent the rectangle."""
+        """Return string represent the Rectangle."""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Print  the message Bye rectangle..."""
+        """Print  the message Bye Rectangle..."""
         print("Bye rectangle...")
