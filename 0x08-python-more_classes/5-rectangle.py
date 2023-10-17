@@ -7,7 +7,6 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         '''Initiate a new Rectangle.
-
         Args:
             width (int): the width of rectangle.
             height (int): the height of rectangle.
@@ -23,9 +22,9 @@ class Rectangle:
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+            raise TypeError('width must be an integer')
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError('width must be >= 0')
         self.__width = value
 
     @property
@@ -36,9 +35,9 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+            raise TypeError('height must be an integer')
         if value < 0:
-            raise ValueError("height mush be >= 0")
+            raise ValueError('height mush be >= 0')
         self.__height = value
 
     def area(self):
@@ -55,14 +54,14 @@ class Rectangle:
         '''Return printable representation of the Rectangle.'''
         newrect = []
         if self.__width != 0 and self.__height != 0:
-            newrect += "\n".join("#" * self.__width for x in range(self.__height))
+            newrect += '\n'.join('#' * self.__width for x in range(self.__height))
 
         return newrect
 
     def __repr__(self):
         '''Return string represent the Rectangle.'''
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+        return 'Rectangle({:d}, {:d})'.format(self.__width, self.__height)
 
     def __del__(self):
         '''Print  the message Bye Rectangle.'''
-        print("Bye rectangle...")
+        print('Bye rectangle...')
