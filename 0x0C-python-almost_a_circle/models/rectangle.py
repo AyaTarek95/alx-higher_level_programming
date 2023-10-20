@@ -71,7 +71,7 @@ class Rectangle(Base):
 
     def display(self):
         '''Print Rectangle instance with #.'''
-        L = "\n" * self.y + (" " * self.y + "#" * self.width + "\n")\
+        L = "\n" * self.y + (" " * self.x + "#" * self.width + "\n")\
             * self.height
         print(L, end="")
 
