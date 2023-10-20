@@ -1,4 +1,4 @@
-#!/usr/in/python3
+#!/usr/bin/python3
 '''Define a class square.'''
 from models.rectangle import Rectangle
 
