@@ -63,7 +63,6 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             newrect += "\n".join("#" * self.__width
                                  for x in range(self.__height))
-
         return newrect
 
     def __repr__(self):
@@ -89,4 +88,8 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """returns a new Rectangle instance with width == height == size"""
+        if not isinstance(size, int):
+            raise TypeError("width must be an integer")
+        if not size >= 0:
+            raise ValueError("width must be >= 0")
         return cls(size, size)
