@@ -51,13 +51,11 @@ class Rectangle:
             return 0
         return ((self.__width * 2) + (self.__height * 2))
 
-    def __Str__(self):
+    def __str__(self):
         '''Return printable representation of the rectangle.'''
         if self.__width == 0 or self.height == 0:
             return ("")
         newrect = []
         for x in range(self.__height):
-            [newrect.append("#") for z in range(self.__width)]
-            if x != self.__height - 1:
-                newrect.append("\n")
-        return ("".join(newrect))
+            newrect.append("#" * self.__width)
+        return ("\n".join(newrect))
