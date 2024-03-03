@@ -50,17 +50,18 @@ class Rectangle:
             return 0
         return ((self.__width * 2) + (self.__height * 2))
 
-    def __Str__(self):
-        '''Return printable representation of the Rectangle.'''
+    def __str__(self):
+        '''Return printable representation of the rectangle.'''
+        if self.__width == 0 or self.height == 0:
+            return ("")
         newrect = []
-        if self.__width != 0 and self.__height != 0:
-            newrect += '\n'.join('#' * self.__width for x in range(self.__height))
-
-        return newrect
+        for x in range(self.__height):
+            newrect.append("#" * self.__width)
+        return ("\n".join(newrect))
 
     def __repr__(self):
         '''Return string represent the Rectangle.'''
-        return 'Rectangle({:d}, {:d})'.format(self.__width, self.__height)
+        return 'Rectangle({}, {})'.format(self.__width, self.__height)
 
     def __del__(self):
         '''Print  the message Bye Rectangle.'''
