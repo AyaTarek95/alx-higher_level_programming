@@ -6,7 +6,6 @@ class Rectangle:
     """Represent a Rectangle."""
 
     number_of_instances = 0
-    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initiate a new rectangle.
@@ -55,20 +54,17 @@ class Rectangle:
             return 0
         return ((self.__width * 2) + (self.__height * 2))
 
-    def __str__(self):
+    def __Str__(self):
         """Return printable representation of the rectangle.
 
-        Print the rectangle with the print_symbol character."""
-        if self.width == 0 or self.height == 0:
-            return ""
+        Print the rectangle with the character '#'.
+        """
+        newrect = []
+        if self.__width != 0 and self.__height != 0:
+            newrect += "\n".join("#" * self.__width
+                                 for x in range(self.__height))
 
-        symbol_list = ""
-        for x in range(self.__height):
-            for z in range(self.__width):
-                symbol_list += str(self.print_symbol)
-            if x != self.__height - 1:
-                symbol_list += '\n'
-        return symbol_list
+        return newrect
 
     def __repr__(self):
         """Return string represent the rectangle."""
@@ -78,3 +74,14 @@ class Rectangle:
         """Print  the message Bye rectangle..."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ returns the biggest rectangle based on the area"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
